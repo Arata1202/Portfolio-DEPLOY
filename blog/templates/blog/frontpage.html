@@ -1,13 +1,83 @@
 {% extends "blog/base.html" %} 
 {% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'CSS/frontpage.css' %}">
+
+<img class="top" src="/media/IMG_6171.jpg" alt="" style="width: 100vw;">
+
+<h2 class="subtitle">＊ About ＊</h2>
+<div class="about">
+    <div class="about-s">
+        <div class="aboutpic">
+            <img src="/media/IMG_2.PNG" alt="">
+        </div>     
+        <div class="myname">
+            <h3>Arata Takano (高野 新)</h3>
+            <p>今年で20歳になりました。<br>大学では経営・マーケティングについて学習しています。PHPの学習を2023年7月に開始し、今ではプログラミングが趣味と言えるほど熱中しています。<br>よろしくお願いします。</p>
+        </div>
+    </div>
+    <div class="link">
+        <p><b>＊GitHub: </b><a href="https://github.com/Arata1202">Arata1202</a></p>
+        <p><b>＊Mail: </b><a>s13202200279@toyo.jp</a></p>
+    </div>
+</div>
+
+<!--　　　　　サービス　　　　　-->
+<h2 class="subtitle">＊ Service ＊</h2>
+
+<div class="service">
+    <div class="topic">
+        <div class="servicepic">
+            <img src="/media/IMG_6184.PNG" alt="">
+        </div>
+        <div class="detail">
+            <h2>Travel Japan !</h2>
+            <p>
+                PHP , JavaScriptで構築されたインスタ風なアプリケーションです。
+                <br>ログインや新規投稿、写真の表示はもちろん、コメント機能やコメントの削除、
+                投稿内容や個人情報のCRUD機能など、細部までこだわって作成しました。
+                <br><br>リンクはこちら: <a href="https://travel.aratasportfolio.com/guest.php">Travel Japan !</a>
+                <br>GitHub: <a href="https://github.com/Arata1202/Travel-Japan-">Arata1202/TravelJapan!</a>
+            </p>
+        </div>
+    </div>
+    <br>
+    <div class="topic">
+        <div class="servicepic-s">
+            <img src="/media/IMG_6185.jpg" alt="">
+        </div>
+        <div class="detail">
+            <h2>Portfolio</h2>
+            <p>
+                このPortfolioはPython・Djangoで構築しています。
+                <br>Java・SpringBootで構築するか迷いましたが、最近はPythonが流行り始めているということもありDjangoを利用しました。
+                <br>デプロイ先はAWSとなっています。
+                <br><br>GitHub: <a href="https://github.com/Arata1202/portfolio">Arata1202/Portfolio</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<!--　　　　　スキル　　　　　-->
+<br><br>
+<h2 class="subtitle">＊ Skills ＊</h2>
+<br>
+<div class="skills">
+    <div class="skill">
+        <h2>Frontend</h2>
+        <img src="/media/IMG_6174.jpg" alt="" width="46%">
+    </div>
+    <div class="skill">
+        <h2>Backend</h2>
+        <img src="/media/IMG_6175.jpg" alt="" width="68%">
+    </div>
+    <div class="skill">
+        <h2>Tools</h2>
+        <img src="/media/IMG_6176.png" alt="" width="80%">
+    </div>
+    <p>他にも R や Spring Boot を扱いました。</p>
+</div>
 
 {% for post in posts %}
-<div class="post block">
-    <h2 class="subtitle"><b>{{post.title}}</b></h2>
-    <p><b>{{post.intro}}</b>({{post.posted_date}})</p>
-    <p>{{post.body}}</p>
-    <a href="{% url 'post_detail' post.slug %}">もっと読む</a>
-    <hr>
-</div>
 {% endfor %}
 {% endblock %}
