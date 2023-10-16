@@ -2,28 +2,65 @@
 {% block content %}
 {% load static %}
 <link rel="stylesheet" href="{% static 'CSS/frontpage.css' %}">
+<script src="{% static 'JS/frontpage.js' async %}"></script>
 
-<img class="top" src="/media/IMG_6171.jpg" alt="" style="width: 100vw;">
+<!--　　　　スクロール用　　　　　-->
+<div id="about">1</div>
+
+<img class="top" src="/media/IMG_6171.jpg" alt="" style="width: 100%;">
 
 <h2 class="subtitle">＊ About ＊</h2>
 <div class="about">
     <div class="about-s">
         <div class="aboutpic">
-            <img src="/media/IMG_2.PNG" alt="">
+            <img src="/media/IMG_101.PNG" alt="">
         </div>     
         <div class="myname">
-            <h3>Arata Takano (高野 新)</h3>
-            <p>今年で20歳になりました。<br>大学では経営・マーケティングについて学習しています。PHPの学習を2023年7月に開始し、今ではプログラミングが趣味と言えるほど熱中しています。<br>よろしくお願いします。</p>
+            <h2 class="topname">Arata Takano / 高野　新</h2>
+            <p>千葉県在住の20歳。大学で消費者行動やマーケティングについて研究しています。2023年7月に、プログラミングに興味を持ち独学を開始したが、のめり込んでしまい、僅か1か月半でPHPを習得。今ではJavaやPythonなど様々な言語に挑み、日々スキルアップを図っています。よろしくお願いします。
+            </p>
+            <hr>
+            <p><a href="https://github.com/Arata1202" target="_blank"><b>GitHub</b></a> / <a href="mailto:s13202200279@toyo.jp" ><b>Mail</b></a> / <a href="https://www.instagram.com/ao_japantraveler/?hl=ja" target="_blank"><b>instagram</b></a></p>         
         </div>
     </div>
-    <div class="link">
-        <p><b>＊GitHub: </b><a href="https://github.com/Arata1202">Arata1202</a></p>
-        <p><b>＊Mail: </b><a>s13202200279@toyo.jp</a></p>
+    <div class="underpic">
+        <div class="love">
+            <div class="lovepic">
+                <h2>Travel</h2>
+                <div class="loveimg">
+                                                                <div id="service">.</div>
+                    <img src="/media/IMG_3136.jpg" alt="">
+                </div>
+                <p>とにかく旅行が好きで、国内の温泉や有名な観光地へよく出掛けます。</p>
+            </div>
+        </div>
+        <div class="love-s">
+            <div class="lovepic">
+                <h2>Transportation</h2>
+                <div class="loveimg">
+                    <img src="/media/IMG_3990.jpg" alt="">
+                </div>
+                <p>飛行機や電車に乗って満喫したり、車を運転して遠出することも多いです。</p>
+            </div>
+        </div>
+        <div class="love">
+            <div class="lovepic">
+                <h2>Game</h2>
+                <div class="loveimg">
+                    <img src="/media/IMG_3340.jpg" alt="">
+                </div>
+                <p>休日は、ゲーミングPCやSwitchなどでよくゲームをしています。</p>
+            </div>
+        </div>
+    </div>
+    <div id="service">2</div>
+    <div class="aboutline">
+        <hr>
     </div>
 </div>
 
 <!--　　　　　サービス　　　　　-->
-<h2 class="subtitle">＊ Service ＊</h2>
+<h2 class="subtitle">＊ Services ＊</h2>
 
 <div class="service">
     <div class="topic">
@@ -32,14 +69,15 @@
         </div>
         <div class="detail">
             <h2>Travel Japan !</h2>
-            <p>
-                PHP , JavaScriptで構築されたインスタ風なアプリケーションです。
-                <br>ログインや新規投稿、写真の表示はもちろん、コメント機能やコメントの削除、
-                投稿内容や個人情報のCRUD機能など、細部までこだわって作成しました。
-                <br><br>リンクはこちら: <a href="https://travel.aratasportfolio.com/guest.php">Travel Japan !</a>
-                <br>GitHub: <a href="https://github.com/Arata1202/Travel-Japan-">Arata1202/TravelJapan!</a>
-            </p>
+            <p> 旅行好きユーザーがユーザー間で繋がり、日本の魅力について共有するアプリケーションです。主な機能だけでなく、個人情報や投稿内容のCRUD機能も実装しています。</p>
+            <br>
+            <p>・使用言語 : PHP , JavaScript , HTML & CSS</p>
+            <p>・データベース : MySQL</p>
+            <p>・リンク : <a href="https://travel.aratasportfolio.com/guest.php" target="_blank"><b> Travel Japan !</b></a> / <a href="https://github.com/Arata1202/Travel-Japan-" target="_blank"><b>GitHub</b></a></p>
         </div>
+    </div>
+    <div class="detail_btn">
+        <p>＞ ＞ ＞ ＞ ＞ <button onclick="location.href=post-3">click here!</button> ＜ ＜ ＜ ＜ ＜</p>
     </div>
     <br>
     <div class="topic">
@@ -48,34 +86,47 @@
         </div>
         <div class="detail">
             <h2>Portfolio</h2>
-            <p>
-                このPortfolioはPython・Djangoで構築しています。
-                <br>Java・SpringBootで構築するか迷いましたが、最近はPythonが流行り始めているということもありDjangoを利用しました。
-                <br>デプロイ先はAWSとなっています。
-                <br><br>GitHub: <a href="https://github.com/Arata1202/portfolio">Arata1202/Portfolio</a>
-            </p>
+            <p>Java , SpringBootで開発するか、Python , Djangoで開発するか迷いましたが、最近Pythonが流行ってきているということでDjangoを選びました。このポートフォリオはAWSにデプロイしています。</p>
+            <br>
+            <p>・使用言語 : Python , Django , HTML & CSS</p>
+            <p>・デプロイ : AWS</p>
+            <p>・リンク : <a href="https://github.com/Arata1202/portfolio" target="_blank"><b>GitHub</b></a></p>
         </div>
+    </div>
+    <div id="skills">3</div>
+    <div class="serviceline">
+        <hr>
     </div>
 </div>
 
 <!--　　　　　スキル　　　　　-->
-<br><br>
 <h2 class="subtitle">＊ Skills ＊</h2>
-<br>
 <div class="skills">
+    ※実務経験はありません。今までに個人で行った内容を記載しています。
     <div class="skill">
         <h2>Frontend</h2>
         <img src="/media/IMG_6174.jpg" alt="" width="46%">
+        <p>・<b>HTML & CSS :</b> Webアプリのコーディング</p>
+        <p>・<b>JavaScript :</b> Webアプリ開発</p>
+        <p>・<b>Django :</b> ポートフォリオの作成</p>
     </div>
     <div class="skill">
         <h2>Backend</h2>
-        <img src="/media/IMG_6175.jpg" alt="" width="68%">
+        <img src="/media/IMG_6189.jpg" alt="" width="80%">
+        <p>・<b>PHP , MySQL :</b> Travel Japan ! の開発</p>
+        <p>・<b>Python :</b> Webスクレイピング / Excel自動化 / 画像認識</p>
+        <p>・<b>Java , SpringBoot :</b> Webアプリ開発</p>
+        <p>・<b>AWS :</b> ポートフォリオのデプロイ</p>
     </div>
     <div class="skill">
         <h2>Tools</h2>
         <img src="/media/IMG_6176.png" alt="" width="80%">
+        <p>・<b>VSCode :</b> Webアプリ開発</p>
+        <p>・<b>Git , GitHub :</b> ソースコードの管理</p>
+        <p>・<b>Linux :</b> RaspberryPi4にUbuntu環境構築</p>
+        <p>・<b>Eclips :</b> SpringBootの開発</p>
+        <p>・<b>WordPress :</b> ブログの作成</p>
     </div>
-    <p>他にも R や Spring Boot を扱いました。</p>
 </div>
 
 {% for post in posts %}

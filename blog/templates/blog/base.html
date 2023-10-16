@@ -6,21 +6,19 @@
     <title>Document</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'CSS/base.css' %}">
+    <script src="{% static 'JS/base.js' async %}"></script>
 </head>
 <body>
     <header>
-        <h1><a href="/"><strong>PortFolio</strong></a></h1>
-        
-        <!--　　設計中
+        <h1><a href="/"><strong>Portfolio</strong></a></h1>
+
         <nav class="navbar">
             <ul>
-                <li><a href="">About</a></li>
-                <li><a href="">Works</a></li>
-                <li><a href="">Skills</a></li>
+                <li><a id="link_about" href="javascript:void(0);" onclick="ScrollWindow('about');">About</a></li>
+                <li><a id="link_service" href="javascript:void(0);" onclick="ScrollWindow('service');">Services</a></li>
+                <li><a id="link_service" href="javascript:void(0);" onclick="ScrollWindow('skills');">Skills</a></li>
             </ul>
-        </nav>
-        -->
-        
+        </nav>    
     </header>
     
 

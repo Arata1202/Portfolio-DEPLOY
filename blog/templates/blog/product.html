@@ -1,0 +1,10 @@
+{% extends "blog/base.html" %} 
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'CSS/product.css' %}">
+<h2 class="subtitle">Travel Japan !</h2>
+
+
+{% for post in posts %}
+{% endfor %}
+{% endblock %}
