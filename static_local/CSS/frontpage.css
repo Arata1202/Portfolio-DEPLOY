@@ -140,16 +140,22 @@ p{
     line-height: 22px;
 }
 .detail_btn{
+    display: flex;
+    justify-content: center;
     text-align: center;
     margin: 10px 0 0 0;
 }
-.detail_btn button{
+.detail_btn a{
+    display: block;
     font-size: 20px;
+    font-weight: bold;
     width: 150px;
     height: 30px;
     background-color: lightpink;
     color: white;
     border: none;
+    margin-top: 15px;
+    margin-left: 20px;
 }
 .serviceline hr{
     width: 100%;
@@ -288,13 +294,32 @@ p{
         border: 1px dashed;
         margin: auto;
         margin-top: 20px;
-    }
-    
+    }    
 
     /* スキル */
     .skills{
         width: 90%;
         margin: auto;
+    }
+
+    /* 高さ遷移 */
+    #about{
+        display: none;
+        position: absolute;
+        margin-top: 22%;
+        color: white;
+    }
+    #service{
+        display: none;
+        position: absolute;
+        margin-top: 115%;
+        color: white;
+    }
+    #skills{
+        display: none;
+        position: absolute;
+        margin-bottom: 120%;
+        color: white;
     }
 }
 
