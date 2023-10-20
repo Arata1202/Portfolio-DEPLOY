@@ -2,15 +2,13 @@
 {% block content %}
 {% load static %}
 <link rel="stylesheet" href="{% static 'CSS/frontpage.css' %}">
-<script src="{% static 'JS/frontpage.js' async %}"></script>
-
-<!--　　　　スクロール用　　　　　-->
-<div id="about">1</div>
+<link rel="stylesheet" href="{% static 'slick/slick.css' %}">
+<link rel="stylesheet" href="{% static 'slick/slick-theme.css' %}">
 
 <img class="top" src="/media/IMG_6171.jpg" alt="" style="width: 100%;">
 
 <!--　　　　　自己紹介　　　　　-->
-<h2 class="subtitle">＊ About ＊</h2>
+<h2 class="subtitle" id="about">＊ About ＊</h2>
 <div class="about">
     <div class="about-s">
         <div class="aboutpic">
@@ -31,10 +29,26 @@
             <div class="lovepic">
                 <h2>Travel</h2>
                 <div class="loveimg">
-
-                    <!--　　　　　スクロール用　　　　　-->
-                    <div id="service">.</div>
-                    <img src="/media/IMG_3136.jpg" alt="">
+                    <div>   
+                        <img src="/media/IMG_3136.jpg" alt="">
+                        <p>国営ひたち海浜公園</p>
+                    </div>
+                    <div>
+                        <img src="/media/IMG_noboribetsu.jpg" alt="">
+                        <p>登別温泉</p>
+                    </div>
+                    <div>
+                        <img src="/media/IMG_ginzan.jpg" alt="">
+                        <p>銀山温泉</p>
+                    </div>
+                    <div>
+                        <img src="/media/IMG_shirakawa.jpg" alt="">
+                        <p>白川郷</p>
+                    </div>
+                    <div>
+                        <img src="/media/IMG_hirome.jpg" alt="">
+                        <p>ひろめ市場</p>
+                    </div>
                 </div>
                 <p>とにかく旅行が好きで、国内の温泉や有名な観光地へよく出掛けます。</p>
             </div>
@@ -43,7 +57,18 @@
             <div class="lovepic">
                 <h2>Transportation</h2>
                 <div class="loveimg">
-                    <img src="/media/IMG_3990.jpg" alt="">
+                    <div>
+                        <img src="/media/IMG_3990.jpg" alt="">
+                        <p>松山空港</p>
+                    </div>
+                    <div>
+                        <img src="/media/IMG_densya.jpg" alt="">
+                        <p>日光・鬼怒川</p>
+                    </div>
+                    <div>
+                        <img src="/media/IMG_fune.jpg" alt="">
+                        <p>箱根</p>
+                    </div>
                 </div>
                 <p>飛行機や電車に乗って満喫したり、車を運転して遠出することも多いです。</p>
             </div>
@@ -52,22 +77,30 @@
             <div class="lovepic">
                 <h2>Game</h2>
                 <div class="loveimg">
-                    <img src="/media/IMG_3340.jpg" alt="">
+                    <div>
+                        <img src="/media/IMG_3340.jpg" alt="">
+                        <p>ゲーム部屋</p>
+                    </div>
+                    <div>
+                        <img src="/media/IMG_desk2.jpg" alt="">
+                        <p>ライトアップ</p>
+                    </div>
+                    <div>
+                        <img src="/media/IMG_desk3.jpg" alt="">
+                        <p>ゲーム部屋</p>
+                    </div>
                 </div>
                 <p>休日は、ゲーミングPCやSwitchなどでよくゲームをしています。</p>
             </div>
         </div>
     </div>
-
-    <!--　　　　　スクロール用　　　　　-->
-    <div id="service">2</div>
     <div class="aboutline">
         <hr>
     </div>
 </div>
 
 <!--　　　　　サービス　　　　　-->
-<h2 class="subtitle">＊ Services ＊</h2>
+<h2 class="subtitle" id="service">＊ Service ＊</h2>
 
 <div class="service">
     <div class="topic">
@@ -83,7 +116,7 @@
             <p>・リンク : <a href="https://github.com/Arata1202/Travel-Japan-" target="_blank"><b>GitHub</b></a></p>
         </div>
     </div>
-
+    
     <!--　　　　　クリックヒア！　　　　　-->
     <div class="detail_btn">
         <h3>Travel Japan ! : </h3>
@@ -104,15 +137,13 @@
         </div>
     </div>
 
-    <!--　　　　　スクロール用　　　　　-->
-    <div id="skills">3</div>
     <div class="serviceline">
         <hr>
     </div>
 </div>
 
 <!--　　　　　スキル　　　　　-->
-<h2 class="subtitle">＊ Skills ＊</h2>
+<h2 class="subtitle" id="skills">＊ Skills ＊</h2>
 <div class="skills">
     ※実務経験はありません。今までに個人で行った内容を記載しています。
     <div class="skill">
@@ -141,6 +172,23 @@
     </div>
 </div>
 
+<!--     jQuery     -->
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="{% static 'slick/slick.min.js' %}"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.loveimg').slick({
+                autoplay: true,
+                autoplaySpeed: 3000,
+                swipe: true,
+                pauseOnHover: false,
+                pauseOnDotsHover: false,
+            });
+        });
+    </script>
+
+<script src="{% static 'JS/frontpage.js' async %}"></script>
 {% for post in posts %}
 {% endfor %}
 {% endblock %}

@@ -6,24 +6,84 @@
     <title>Document</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'CSS/base.css' %}">
-    <script src="{% static 'JS/base.js' async %}"></script>
 </head>
 <body>
-    <header>
+    <header id="home">
         <h1><a href="/"><strong>Portfolio</strong></a></h1>
-
+        
         <!--　　　　　ページ内遷移メニュー　　　　　-->
         <nav class="navbar">
             <ul>
+                <li><a id="link_home" href="javascript:void(0);" onclick="scrollToTop();">Home</a></li>
                 <li><a id="link_about" href="javascript:void(0);" onclick="ScrollWindow('about');">About</a></li>
-                <li><a id="link_service" href="javascript:void(0);" onclick="ScrollWindow('service');">Services</a></li>
+                <li><a id="link_service" href="javascript:void(0);" onclick="ScrollWindow('service');">Service</a></li>
                 <li><a id="link_skills" href="javascript:void(0);" onclick="ScrollWindow('skills');">Skills</a></li>
             </ul>
-        </nav>    
+        </nav>  
+        
+        <div class="hamburger"> <!--  モバイルnone  -->
+            <div class="btn">
+                <i></i>
+                <i></i>
+                <i></i>
+            </div>  
+            <div class="block">
+                <div class="list">
+                    <h1>Portfolio</h1>
+                    <h2>Menu</h2>
+                    <ul>
+                        <li><h5><a class="link_home" id="link_home" href="javascript:void(0);" onclick="scrollToTop();"><img src="/media/IMG_home.png" alt=""> Home</a></h5></li>
+                        <li style="padding-left: 0;"><hr></li>
+                        <li><h5><a class="link_about" id="link_about" href="javascript:void(0);" onclick="ScrollWindow('about');"><img src="/media/IMG_profile.png" alt=""> About</a></h5></li>
+                        <li style="padding-left: 0;"><hr></li>
+                        <li><h5><a class="link_service" id="link_service" href="javascript:void(0);" onclick="ScrollWindow('service');"><img src="/media/IMG_service.png" alt=""> Service</a></h5></li>
+                        <li style="padding-left: 0;"><hr></li>
+                        <li><h5><a class="link_skills" id="link_skills" href="javascript:void(0);" onclick="ScrollWindow('skills');"><img src="/media/IMG_skills.png" alt=""> Skills</a></h5></li>
+                        <li style="padding-left: 0;"><hr></li>
+                    </ul>
+                </div>
+            </div>   
+            <script>
+                //　　　　　ハンバーガーメニュー
+                'use strict'
+                const btn = document.querySelector('.btn');
+                const block = document.querySelector('.block');
+                btn.addEventListener('click', () => {
+                    btn.classList.toggle('active');
+                    block.classList.toggle('active');
+                });
+                
+                //　　　　　内部リンク　ハンバーガーオフ
+                const link_home = document.querySelector('.link_home');
+                link_home.addEventListener('click', () => {
+                    btn.classList.remove('active');
+                    block.classList.remove('active');
+                });
+
+                const link_about = document.querySelector('.link_about');
+                link_about.addEventListener('click', () => {
+                    btn.classList.remove('active');
+                    block.classList.remove('active');
+                });
+
+                const link_service = document.querySelector('.link_service');
+                link_service.addEventListener('click', () => {
+                    btn.classList.remove('active');
+                    block.classList.remove('active');
+                });
+
+                const link_skills = document.querySelector('.link_skills');
+                link_skills.addEventListener('click', () => {
+                    btn.classList.remove('active');
+                    block.classList.remove('active');
+                });
+            </script>
+        </div>
     </header>
     
     <section class="section">
         <div class="container">{% block content %} {% endblock %}</div>
     </section>
+    <script src="{% static 'JS/base.js' async %}"></script>
 </body>
 </html>
