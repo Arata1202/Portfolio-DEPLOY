@@ -7,8 +7,22 @@
     font-size: 35px;
     margin-bottom: 50px;
     margin-top: 30px;
+    color: deepskyblue;
     position: relative;
 }
+.subtitle:after {
+    position: absolute;
+    top: 60px;
+    bottom: 0;
+    left: 44%;
+    width: 12.5%;
+    height: 6px;
+    content: '';
+    border-radius: 3px;
+    background-image: -webkit-gradient(linear, right top, left top, from(#2af598), to(#009efd));
+    background-image: -webkit-linear-gradient(right, #2af598 0%, #009efd 100%);
+    background-image: linear-gradient(to left, #2af598 0%, #009efd 100%);
+  }
 a{
     text-decoration: none;
     color: royalblue;
@@ -36,6 +50,9 @@ a{
 .myname p{
     margin: 0 0 0 30px;
     width: 570px;
+}
+.myname p a:hover{
+    color: skyblue;
 }
 .myname h2 button{
     width: 40px;
@@ -130,6 +147,9 @@ hr{
 .detail{
     width: 600px;
 }
+.detail p a:hover{
+    color: skyblue;
+}
 p{
     margin: 0 0 0 0;
     line-height: 22px;
@@ -152,6 +172,9 @@ p{
     margin-top: 15px;
     margin-left: 20px;
 }
+.detail_btn a:hover{
+    transform: scale(1.2);
+}
 .serviceline hr{
     width: 100%;
     border: 1px dashed;
@@ -172,6 +195,37 @@ p{
     margin: 0 0 0 0;
 }
 
+/*    クリックヒア      */
+.detail_btn a{   
+    animation-name:rhythm;	
+    animation-delay:0s;		
+    animation-duration: 2s;	
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite; 
+}
+ 
+@keyframes rhythm {
+    0% {
+        transform: scale(1);
+    }
+ 
+    40% {
+        transform: scale(1);
+    }
+ 
+    50% {
+        transform: scale(1.06);
+    }
+    
+    60% {
+        transform: scale(1);
+    }
+     
+    100% {
+        transform: scale(1);
+    }
+}
+
 @media screen and (max-width: 767px) {
     .top{
         margin-top: 65px;
@@ -179,9 +233,24 @@ p{
     .subtitle{
         text-align: center;
         font-size: 35px;
-        margin-bottom: 20px;
+        margin-bottom: 30px;
         margin-top: 20px;
+        color: deepskyblue;
+        position: relative;
     }
+    .subtitle:after {
+        position: absolute;
+        top: 50px;
+        bottom: 0;
+        left: 28%;
+        width: 45%;
+        height: 6px;
+        content: '';
+        border-radius: 3px;
+        background-image: -webkit-gradient(linear, right top, left top, from(#2af598), to(#009efd));
+        background-image: -webkit-linear-gradient(right, #2af598 0%, #009efd 100%);
+        background-image: linear-gradient(to left, #2af598 0%, #009efd 100%);
+      }
     
     /* about */
     .about{

@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>portfolio</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'CSS/base.css' %}">
 </head>
 <body>
     <header id="home">
-        <h1><a href="/"><strong>Portfolio</strong></a></h1>
+        <h1><a id="link" href="javascript:void(0);" onclick="scrollToTop();"><strong>Portfolio</strong></a></h1>
         
         <!--　　　　　ページ内遷移メニュー　　　　　-->
         <nav class="navbar">
@@ -29,7 +29,7 @@
             </div>  
             <div class="block">
                 <div class="list">
-                    <h1>Portfolio</h1>
+                    <h1><a class="link_top" id="link_top" href="javascript:void(0);" onclick="scrollToTop();"><strong>Portfolio</strong></a></h1>
                     <h2>Menu</h2>
                     <ul>
                         <li><h5><a class="link_home" id="link_home" href="javascript:void(0);" onclick="scrollToTop();"><img src="/media/IMG_home.png" alt=""> Home</a></h5></li>
@@ -54,6 +54,12 @@
                 });
                 
                 //　　　　　内部リンク　ハンバーガーオフ
+                const link_top = document.querySelector('.link_top');
+                link_top.addEventListener('click', () => {
+                    btn.classList.remove('active');
+                    block.classList.remove('active');
+                });
+
                 const link_home = document.querySelector('.link_home');
                 link_home.addEventListener('click', () => {
                     btn.classList.remove('active');
