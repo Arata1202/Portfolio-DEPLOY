@@ -186,6 +186,7 @@ p{
     width: 52%;
     margin: auto;
     margin-top: 0;
+    margin-bottom: 30px;
 }
 .skill h2{
     font-size: 25px;
@@ -202,6 +203,11 @@ p{
     animation-duration: 2s;	
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite; 
+}
+footer{
+    background-color: skyblue;
+    color: white;
+    text-align: center;
 }
  
 @keyframes rhythm {
@@ -364,6 +370,7 @@ p{
     .skills{
         width: 90%;
         margin: auto;
+        margin-bottom: 30px;
     }
 
     
