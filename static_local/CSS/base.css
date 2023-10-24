@@ -268,3 +268,22 @@ header h1 a{
         display: none;
     }
 }
+
+@media screen and (max-width: 1020px) and (min-width: 767px){
+    /* タブレット用 */
+    .hamburger{
+      display: block;
+    } 
+    header{
+      background-color: skyblue;
+      width: 100%;
+      display: flex;
+      position: fixed;
+      padding: 5px 0px 5px 0px;
+      top: 0;
+      z-index: 9;
+    }
+    .navbar{
+      display: none;
+    }
+  }
