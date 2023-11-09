@@ -1,17 +1,14 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>portfolio</title>
-    {% load static %}
     <link rel="stylesheet" href="{% static 'CSS/base.css' %}">
 </head>
 <body>
-    <div class="loader-bg">
-        <div class="loader"></div>
-    </div>
-
     <header id="home">
         <h1><a id="link" href="javascript:void(0);" onclick="scrollToTop();"><strong>Portfolio</strong></a></h1>
         
@@ -47,53 +44,13 @@
                     </ul>
                 </div>
             </div>   
-            <script>
-                //　　　　　ハンバーガーメニュー
-                'use strict'
-                const btn = document.querySelector('.btn');
-                const block = document.querySelector('.block');
-                btn.addEventListener('click', () => {
-                    btn.classList.toggle('active');
-                    block.classList.toggle('active');
-                });
-                
-                //　　　　　内部リンク　ハンバーガーオフ
-                const link_top = document.querySelector('.link_top');
-                link_top.addEventListener('click', () => {
-                    btn.classList.remove('active');
-                    block.classList.remove('active');
-                });
-
-                const link_home = document.querySelector('.link_home');
-                link_home.addEventListener('click', () => {
-                    btn.classList.remove('active');
-                    block.classList.remove('active');
-                });
-
-                const link_about = document.querySelector('.link_about');
-                link_about.addEventListener('click', () => {
-                    btn.classList.remove('active');
-                    block.classList.remove('active');
-                });
-
-                const link_service = document.querySelector('.link_service');
-                link_service.addEventListener('click', () => {
-                    btn.classList.remove('active');
-                    block.classList.remove('active');
-                });
-
-                const link_skills = document.querySelector('.link_skills');
-                link_skills.addEventListener('click', () => {
-                    btn.classList.remove('active');
-                    block.classList.remove('active');
-                });
-            </script>
         </div>
     </header>
-    
+
+    <script src="{% static 'JS/base.js' %}"></script>
+
     <section class="section">
         <div class="container">{% block content %} {% endblock %}</div>
     </section>
-    <script src="{% static 'JS/base.js' %}"></script>
 </body>
 </html>
